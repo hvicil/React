@@ -7,6 +7,9 @@ import Jsx5 from "./components/03-jsx/jsx5";
 import Style1 from "./components/04-styles/style1";
 import Style2 from "./components/04-styles/style2";
 import Style3 from "./components/04-styles/style3";
+import Clock1 from "./components/05-clock-1/clock1";
+import Greetings from "./components/06-props/greetings";
+import Clock2 from "./components/07-clock-2/clock2";
 import ImageGallery from "./components/08-images/image-gallery";
 import ProfileCard from "./components/09-profile-card/profile-card";
 import ReactIcons from "./components/11-icons/react-icons";
@@ -47,9 +50,13 @@ function App() {
         <Counter />
         <Birthday />
         <UseEffect />
+        <Clock3 />
+        <Clock1 />
+        <Greetings />
       />
   */}
-      <Clock3 />
+
+      <Clock2 />
     </div>
   );
 }
