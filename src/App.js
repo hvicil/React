@@ -7,6 +7,16 @@ import Jsx5 from "./components/03-jsx/jsx5";
 import Style1 from "./components/04-styles/style1";
 import Style2 from "./components/04-styles/style2";
 import Style3 from "./components/04-styles/style3";
+import ImageGallery from "./components/08-images/image-gallery";
+import ProfileCard from "./components/09-profile-card/profile-card";
+import ReactIcons from "./components/11-icons/react-icons";
+import Shop from "./components/12-shop/shop";
+import State from "./components/13-state/state";
+import Stateless from "./components/13-state/stateless";
+import Counter from "./components/14-counter/counter";
+import Birthday from "./components/15-birthday/birthday";
+import UseEffect from "./components/16-useeffect/use-effect";
+import Clock3 from "./components/17-clock-3/clock3";
 
 function App() {
   return (
@@ -20,8 +30,26 @@ function App() {
       <JsxPractice />
       <Style1 />
       <Style2 />
-  */}
       <Style3 />
+
+      <ImageGallery />
+       <ProfileCard
+        name="Ece Metin"
+        location="Istanbul, Turkey"
+        shot="91"
+        followers="12"
+        following="15"
+        avatar="profile.jpg"
+        <ReactIcons />
+        <Shop />
+        <Stateless />
+        <State />
+        <Counter />
+        <Birthday />
+        <UseEffect />
+      />
+  */}
+      <Clock3 />
     </div>
   );
 }
