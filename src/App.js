@@ -24,6 +24,8 @@ import Useeffect2 from "./components/18-useeffect/useeffect";
 import RandomImages from "./components/19-random-images/random-images";
 import Useref from "./components/20-useref/useref";
 import ClassTypeTest from "./components/21-class-type/class-type";
+import UserCards from "./components/22-user-cards/usercards";
+import Countries from "./components/23-countries/countries";
 
 function App() {
   return (
@@ -60,10 +62,11 @@ function App() {
         <Clock2 />
         <Useeffect2/>
         <RandomImages />
+         <ClassTypeTest />
+         <UserCards />
       />
   */}
-
-      <ClassTypeTest />
+      <Countries />
     </div>
   );
 }
