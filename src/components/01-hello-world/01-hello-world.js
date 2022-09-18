@@ -1,11 +1,6 @@
-import Comp from "../02-comp/02-comp";
+import React from "react";
 const HelloWorld = () => {
-  return (
-    <h1>
-      Hello React!
-      <Comp />
-    </h1>
-  );
+  return <h1>Hello React!</h1>;
 };
 
 export default HelloWorld;

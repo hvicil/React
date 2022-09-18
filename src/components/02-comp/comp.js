@@ -1,4 +1,4 @@
-import Jsx from "../03-jsx/jsx1";
+import Jsx from "react";
 
 const Comp = () => {
   return (

@@ -1,3 +1,5 @@
+import React from "react";
+
 const Jsx1 = () => {
   const name = "Buralar hep HTML di";
   return (

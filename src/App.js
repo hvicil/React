@@ -1,3 +1,10 @@
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Col, Container, Row } from "reactstrap";
+import Header from "./components/00-home/header/header";
+import Menu from "./components/00-home/menu/menu";
 import HelloWorld from "./components/01-hello-world/01-hello-world";
 import JsxPractice from "./components/03-jsx/jsx-practice";
 import Jsx2 from "./components/03-jsx/jsx2";
@@ -33,11 +40,58 @@ import Form3 from "./components/25-forms/form3";
 import Form4 from "./components/25-forms/form4";
 import Form5 from "./components/25-forms/form5";
 import Form6 from "./components/25-forms/form6";
+import Exchange from "./components/26-exchange/exchange";
+import StoreContext from "./store";
 
 function App() {
+  const [currencies, setCurrencies] = useState({});
+  const [color, setColor] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
+
+  const loadData = async () => {
+    try {
+      const resp = await axios.get(
+        "https://api.frankfurter.app/latest?from=TRY"
+      );
+      console.log(resp.data);
+      setCurrencies(resp.data.rates);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    loadData();
+  }, []);
+
   return (
-    <div className="App">
-      {/*
+    <StoreContext.Provider value={{ currencies, color, darkMode, setDarkMode }}>
+      <div className={`app ${darkMode && "dark-mode"}`}>
+        <BrowserRouter>
+          <Header />
+          <Container fluid>
+            <Row>
+              <Col sm={2}>
+                <Menu />
+              </Col>
+              <Col sm={10} className="p-5">
+                <Routes>
+                  <Route path="/hello-world" element={<HelloWorld />} />
+
+                  <Route path="/jsx2" element={<Jsx2 />} />
+                  <Route path="/jsx3" element={<Jsx3 />} />
+                  <Route path="/jsx4" element={<Jsx4 />} />
+                  <Route path="/jsx5" element={<Jsx5 />} />
+                  <Route path="/jsx-practise" element={<JsxPractice />} />
+                  <Route path="/style1" element={<Style1 />} />
+                  <Route path="/style2" element={<Style2 />} />
+                  <Route path="/style3" element={<Style3 />} />
+                  <Route path="exchange" element={<Exchange />} />
+                </Routes>
+              </Col>
+            </Row>
+          </Container>
+
+          {/*
        <HelloWorld />
       <Jsx2 />
       <Jsx3 />
@@ -78,10 +132,12 @@ function App() {
           <Form3 />
           <Form4 />
           <Form5 />
+           <Form6 />
       />
   */}
-      <Form6 />
-    </div>
+        </BrowserRouter>
+      </div>
+    </StoreContext.Provider>
   );
 }
 
